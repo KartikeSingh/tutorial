@@ -1,15 +1,8 @@
-const userSchema = new mongoose.Schema({
-    id: {
-        type: String,
-        required: true
-    },
+const { model, Schema } = require("mongoose");
+
+const userSchema = new Schema({
     name: String,
-    hobbies: [String],
-    data: {
-        age: {
-            type: Number,
-            default: 16
-        },
-        male: Boolean
-    }
+    age: Number,
 });
+
+module.exports = model("user_schema_for_youtube", userSchema);
