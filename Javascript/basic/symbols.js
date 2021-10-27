@@ -1,19 +1,32 @@
-// refer to this MDN article for further explanation on what symbols are
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+// // refer to this MDN article for further explanation on what symbols are
+// // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
 
-// symbols are useful for enums.
+// // symbols are useful for preventing name clashes & we can make private properties with these
+// const nameSymbol = Symbol("name");
+// const nameSymbol2 = Symbol("name");
 
-const myEnum = {
-    a: Symbol(),
-    b: Symbol(),
-    c: Symbol()
-};
+// class Pet {
+//     constructor(name) {
+//         this[nameSymbol] = name;
+//     }
 
-const input = myEnum.a;
+//     getName = () => this[nameSymbol];
 
-if (input === myEnum.a) {
-    console.log("this block will always run");
-}
+//     get name() {
+//         return this[nameSymbol]
+//     }
+// }
+
+// const dog = new Pet('dog');
+
+// console.log(dog.getName());
+
+// // nothing will change the name
+// dog.name = "not dog";
+// dog.nameSymbol = "not dog";
+// dog[nameSymbol2] = "not dog";
+
+// console.log(dog.name)
 
 // other uses include messing with javascript's interpreter!
 // simple example:
@@ -22,22 +35,22 @@ class Fibonacci {
     constructor(amount) {
         this.amount = amount;
     }
-  
-    * [Symbol.iterator]() {
+
+    *[Symbol.iterator]() {
         let current = 1, a = 1, b = 1, i = 1;
- 
+
+        yield 0;
         yield 1;
-      
+
         while (i++ < this.amount) {
-             current = b;
-             yield current;
-             b += a;
-             a = current;
+            current = b;
+            yield current;
+            b += a;
+            a = current;
         }
     }
 };
 
-const fib = new Fibonacci(10);
+const fib = new Fibonacci(8);
 
 console.log([...fib]);
-// outputs [ 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ]

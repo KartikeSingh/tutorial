@@ -4,8 +4,3 @@ function add(a, b, callback) {
 
     return c;
 }
-
-add(1, 2, (sum) => {
-    console.log("Sum is " + sum);
-})
-

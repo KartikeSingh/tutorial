@@ -13,11 +13,12 @@ function * range(start, end) {
     }
 }
 
+
 const generator = range(5, 10);
 
 while (true) {
     const yielded = generator.next();
-  
+
     // done yielding. break out of loop
     if (yielded.done) {
         break;
