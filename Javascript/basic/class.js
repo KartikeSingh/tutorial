@@ -1,4 +1,7 @@
 class aClass {
+    constructor(a){
+        this.a = a
+    }
     
     log(string) {
         console.log(string);
@@ -20,8 +23,5 @@ class bClass extends aClass {
 }
 
 const bObject = new bClass(69, 420);
-console.log(bObject.a); // 69
-console.log(bObject.b); // 420
 
-bObject.hi()
-bObject.log("log using b")
+console.log(Object.getOwnPropertyNames(bObject));

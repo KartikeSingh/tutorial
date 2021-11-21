@@ -77,15 +77,15 @@ b.reduceRight((p, c) => p + c)
 // console.log(b.splice(0, 2));
 // console.log(b);
 
-// console.log([ 1, 2, 3, 4, 5, 6 ])
-// console.log([ 1, 2, 3, 4, 5, 6 ].copyWithin(0,2))
+// console.log([1, 2, 3, 4, 5, 6])
+// console.log([1, 2, 3, 4, 5, 6].copyWithin(4, 2))
 
 // // [ 1, 2, 3, 4, 5, 6 ]
-// // [ 3, 4, 5, 6, 5, 6 ]
+// // [1,2,3,4, 3, 4  ]
 
 // console.log(a.forEach((v) => v * v * v))
 // console.log(a.map((v) => {
-//     return v * v;
+   
 // }))
 
 
