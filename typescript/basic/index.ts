@@ -5,6 +5,7 @@ type str = string | number;
 
 let a: str;
 
+
 function sum(a: number, b: number): number {
     return a + b;
 }
@@ -54,6 +55,7 @@ deleteUser(new shisui())
 interface hello<a, b = string> {
     first: a,
     second: b,
+    third?:string
 }
 
 let vr: hello<number, number> = {
